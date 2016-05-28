@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <title>Single applet + API</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="navigation.js"></script>
+</head>
+
+<body>
+<div>
+        <h1>Single applet + API</h1>
+        <p>This is an example of an HTML file containing a GeoGebra applet with buttons triggering the GeoGebra Javascript API.</p>
+
+        <script type="text/javascript" src="https://www.geogebra.org/scripts/deployggb.js"></script>
+        <script type="text/javascript">
+
+                var parameters = {"prerelease":false,"width":600,"height":450,"showToolBar":false,"borderColor":null,"showMenuBar":false,"showAlgebraInput":false,
+				"showResetIcon":true,"enableLabelDrags":false,"enableShiftDragZoom":true,"enableRightClick":false,"capturingThreshold":null,"showToolBarHelp":false,
+				"errorDialogsActive":true,"useBrowserForJS":false,
+				"filename":"../ggb/triangle.ggb"};
+
+                var applet = new GGBApplet('5.0', parameters);
+
+                applet.setJavaCodebase('GeoGebra/Java/5.0');
+                //applet.setHTML5Codebase('GeoGebra/HTML5/5.0/webSimple/');
+
+                window.onload = function() {
+                        applet.inject('applet_container', 'preferHTML5');
+                        }
+        </script>
+
+        <div id="applet_container"></div>
+
+        <form>
+                <input value="Set point A invisible" onclick="ggbApplet.setVisible('A', false)" type="button">
+                <input value="Set point A visible" onclick="ggbApplet.setVisible('A', true)" type="button">
+				
+        </form>
+		<script type="text/javascript"> 
+function evalInput(strInput) {
+  ggbApplet.evalCommand(strInput);
+  return false;
+}
+</script> 
+<form action="" onsubmit="evalInput(inputField.value);inputField.value='';return false;"> 
+Input field: <input type="text" name="inputField" size="30"> 
+</form> 
+</div>
+</body>
+
+</html>

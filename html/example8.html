@@ -1,0 +1,148 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <head>
+<title>GeoGebra and JavaScript</title>
+<meta name="generator" content="GeoGebra">
+<style type="text/css"><!--body { font-family:Helvetica,sans-serif; margin-left:40px }--></style>
+</head>
+</head>
+
+<body>
+
+<table border="0" width="600">
+
+  <tbody>
+
+    <tr>
+
+      <td>
+      <h2>GeoGebraApplet to JavaScript Communication</h2>
+
+      <p>This page shows how to register JavaScript functions as
+listeners to changes in a GeoGebra
+construction. See <a href="geogebra_applet_javascript.html">GeoGebra
+Applets and JavaScript</a> for a syntax description of the used
+methods.
+      </p>
+	  <script type="text/javascript" src="https://www.geogebra.org/scripts/deployggb.js"></script>
+	  <script type="text/javascript">
+	  var parameters = {"prerelease":false,"width":600,"height":450,"showToolBar":true,"borderColor":null,"showMenuBar":false,"showAlgebraInput":false,
+				"showResetIcon":true,"enableLabelDrags":false,"enableShiftDragZoom":true,"enableRightClick":true,"capturingThreshold":null,"showToolBarHelp":false,
+				"errorDialogsActive":true,"useBrowserForJS":true,
+				"showLogging":"true",
+				"ggbbase64":"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"};
+				
+	var applet = new GGBApplet('5.0', parameters);
+	
+	window.onload = function() {
+                        applet.inject('applet_container', 'preferHTML5');
+                        }
+</script>
+
+<script type="text/javascript">
+
+function ggbOnInit() {
+	// register add, remove, rename and update listeners
+	var applet = document.ggbApplet;
+	applet.registerAddListener("addListener");
+	applet.registerRemoveListener("removeListener");
+	applet.registerRenameListener("renameListener");
+	applet.registerClearListener("clearListener");
+	applet.registerUpdateListener("updateListener");
+}
+
+var strLength = 150;
+function addListener(objName) { 
+	document.listenerForm.textarea1.value = "add: " + objName + "\n" + document.listenerForm.textarea1.value.substring(0, strLength );	
+	printConstructionState();
+}
+
+function removeListener(objName) {
+	document.listenerForm.textarea1.value = "remove: " + objName + "\n" + document.listenerForm.textarea1.value.substring(0, strLength );	
+	printConstructionState();
+}
+
+function renameListener(oldObjName, newObjName) {
+	document.listenerForm.textarea1.value = "rename: " + objName + "\n" + document.listenerForm.textarea1.value.substring(0, strLength );	
+	printConstructionState();
+}
+
+function updateListener(objName) {
+	strVal = document.ggbApplet.getValueString(objName);
+	document.listenerForm.textarea2.value = strVal + "\n" + document.listenerForm.textarea2.value.substring(0, strLength );
+}
+
+function clearListener() {
+	document.listenerForm.textarea1.value = "";
+	document.listenerForm.textarea2.value = "";
+	document.listenerForm.textarea1.value = "construction cleared";
+	document.listenerForm.consState.value = "";
+}
+
+function printConstructionState() {
+	var applet = document.ggbApplet;
+	var objNumber = applet.getObjectNumber();
+	var strState = "Number of objects: " + objNumber;
+	for (i=0; i < objNumber; i++) {
+		strName = applet.getObjectName(i);
+		strType = applet.getObjectType(strName);
+		strCommand = applet.getCommandString(strName);
+		strState += "\n" + strType + " " + strName + ", " + strCommand;
+	}
+	document.listenerForm.consState.value = strState;
+}
+
+
+      </script>
+      <p></p>
+<div id="applet_container"></div>
+      <form name="listenerForm">
+
+        <b>Construction State Listening<br>
+
+        </b>
+        <table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2">
+
+          <tbody>
+
+            <tr>
+
+              <td>
+			update:<br>
+			  <textarea name="textarea2" cols="35" rows="5"></textarea>
+
+			<br>add, remove, rename:<br>
+      	        <textarea name="textarea1" cols="35" rows="5"></textarea>
+
+		  
+		  </td>
+              <td>Current Construction State:<br>
+              <textarea name="consState" wrap="physical" cols="30" rows="12"></textarea></td>
+
+            </tr>
+
+          </tbody>
+        </table>
+
+        <br>
+
+      </form>
+
+
+      <p><span style="font-size: small;">Created
+with <a href="http://www.geogebra.at" target="_blank">GeoGebra</a>
+by Markus Hohenwarter</span></p>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+
+</body>
+</html>
