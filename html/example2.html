@@ -20,10 +20,14 @@
     // The third parameter sets the bordercolor. Additional parameters can be defined as described here: http://wiki.geogebra.org/en/Reference:Applet_Parameters
     var applet1 = new GGBApplet({material_id: "17499", borderColor:"#55FF00"}, true);
 
+    //  when used with Math Apps Bundle, uncomment this:
+    //  applet1.setHTML5Codebase('GeoGebra/HTML5/5.0/web/');
 	// Create applet for file ../ggb/sine-curves.ggb
     // The second parameter forces not to use webSimple (this is necessary when multiple applets are used on one page, if one cannot use webSimple).
     var applet2 = new GGBApplet({filename: "../ggb/sine-curves.ggb","showtoolbar":true}, true);
 
+    //  when used with Math Apps Bundle, uncomment this:
+    //  applet2.setHTML5Codebase('GeoGebra/HTML5/5.0/web/');
     window.onload = function() {
         applet1.inject('applet_container1', 'preferHTML5');
         applet2.inject('applet_container2', 'preferHTML5');

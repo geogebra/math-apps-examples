@@ -51,7 +51,8 @@
                         "perspective":"AG"};
 
                 var applet = new GGBApplet(parameters, '4.0', 'applet_container');
-                //applet.setHTML5Codebase('GeoGebra/HTML5/5.0/web3d/');
+               //  when used with Math Apps Bundle, uncomment this:
+               //  applet.setHTML5Codebase('GeoGebra/HTML5/5.0/web3d/');
 
                 window.onload = function() { applet.inject('applet_container','preferhtml5'); updateHelp('AG');}
 

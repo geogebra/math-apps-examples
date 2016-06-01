@@ -3,19 +3,14 @@
 <html> 
 <head> 
 <title>GeoGebra and JavaScript</title> 
-<meta name="generator" content="GeoGebra"> 
-<style type="text/css"><!--body { font-family:Helvetica,sans-serif; margin-left:40px }--></style> 
+<script src="navigation.js"></script>
 <script src="https://tube.geogebra.org/scripts/deployggb.js"></script>
 
 </head> 
  
 <body> 
  
-<table border="0" width="600"> 
- 
-  <tbody> 
- 
-    <tr> 
+<div> 
  
       <td> 
       <h2>GeoGebra Applet to Applet Communication</h2> 
@@ -101,21 +96,18 @@ var parameters2 = {
 var views = {'is3D': 0,'AV': 1,'SV': 0,'CV': 0,'EV2': 0,'CP': 0,'PC': 0,'DA': 0,'FI': 0,'PV': 0,'macro': 0};
 
 var applet = new GGBApplet(parameters, '5.0', views);
+              
+    //  when used with Math Apps Bundle, uncomment this:
+    //  applet.setHTML5Codebase('GeoGebra/HTML5/5.0/web/');
 var applet2 = new GGBApplet(parameters2, '5.0', views);
+              
+    //  when used with Math Apps Bundle, uncomment this:
+    //  applet2.setHTML5Codebase('GeoGebra/HTML5/5.0/web/');
 
 window.onload = function() {applet.inject('ggbApplet');applet2.inject('ggbApplet2')};
 
 </script> 
- 
-      <p><span style="font-size: small;">Created
-with <a href="http://www.geogebra.at" target="_blank">GeoGebra</a> 
-by Markus Hohenwarter</span></p> 
- 
-      </td> 
- 
-    </tr> 
- 
-  </tbody> 
+     </div>
 </table> 
 </body> 
 </html> 

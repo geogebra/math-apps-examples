@@ -19,7 +19,8 @@
 
                 var applet = new GGBApplet(parameters, '5.0');
                 applet.setHTML5Codebase('https://app.geogebra.org/5.0/web3d/');
-
+                //  when used with Math Apps Bundle, uncomment this:
+                //  applet.setHTML5Codebase('GeoGebra/HTML5/5.0/web/');
                 window.onload = function() {
                         applet.inject('applet_container', 'preferhtml5');
                         }

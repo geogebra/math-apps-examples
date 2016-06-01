@@ -4,8 +4,7 @@
 <head>
     <meta charset="utf-8"/>
     <title>GeoGebra exercise example</title>
-    <link rel="stylesheet" href="https://web.geogebra.org/app/styles.css" type="text/css">
-
+<script src="navigation.js"></script>
     <script type="text/javascript" src="https://tube.geogebra.org/scripts/deployggb.js"></script>
 
     <style>
@@ -56,7 +55,9 @@
         };
 
         var applet = new GGBApplet(parameters, '5.0');
-
+              
+    //  when used with Math Apps Bundle, uncomment this:
+    //  applet.setHTML5Codebase('GeoGebra/HTML5/5.0/web/');
         window.onload = function () {
             applet.inject('appletdiv')
         };
@@ -120,6 +121,7 @@
 </head>
 
 <body dir="ltr" tabindex="-1">
+<div>
 <h1>Exercise example</h1>
 
 <p>For creating an Exercise just start the "New Exercise" dialog and create or choose a "User defined Tool" which corresponds to
@@ -171,62 +173,8 @@
         <div id="appletdiv"></div>
     </div>
     <div id="info"></div>
-    <div><p>The JavaScript Code for checking this example:</p><pre>/*
- * This function creates some outputs depending on the result.
- */
-function check() {
-    //save the return object of ggbApplet.getExerciseResult()
-    var exresult = ggbApplet.getExerciseResult();
-
-    document.getElementById('feedback').innerHTML = '';
-    var fractionsum = 0;
-    // if a part of the result has a fraction of 1 ignore the other results
-    var singleCorrectIgnoreOthers = false;
-    for (key in exresult) {
-        if (0.999 < exresult[key].fraction) {
-            singleCorrectIgnoreOthers = true;
-            if (exresult[key].hint != "") {
-                var feedback = document.createElement("p");
-                feedback.appendChild(document.createTextNode(exresult[key].hint));
-                document.getElementById('feedback').appendChild(feedback);
-            }
-            fractionsum += exresult[key].fraction;
-        }
-    }
-
-    for (key in exresult) {
-        if (!singleCorrectIgnoreOthers || exresult[key].fraction < 0) {
-            if (exresult[key].hint != "") {
-                var feedback = document.createElement("p");
-                feedback.appendChild(document.createTextNode(exresult[key].hint));
-                document.getElementById('feedback').appendChild(feedback);
-            }
-            fractionsum += exresult[key].fraction;
-        }
-    }
-    var points = document.createElement("p");
-    if (0.999 < fractionsum) {
-        points.setAttribute("class", "ok");
-        points.appendChild(document.createTextNode("You got " + 100 + " Points out of 100."));
-    } else if (fractionsum > 0.001) {
-        points.setAttribute("class", "partial");
-        points.appendChild(document.createTextNode("You got " + fractionsum * 100 + " Points out of 100."));
-    } else {
-        points.setAttribute("class", "failed");
-        points.appendChild(document.createTextNode("You got " + 0 + " Points out of 100."));
-    }
-    document.getElementById('feedback').appendChild(points);
-
-    document.getElementById('info').innerHTML ="";
-    var resultText = document.createElement("p");
-    resultText.appendChild(document.createTextNode("The output of ggbApplet.getExerciseResult() was: "));
-    document.getElementById('info').appendChild(resultText);
-    var resultObj = document.createElement("pre");
-    resultObj.innerHTML = JSON.stringify(exresult, null, 4);
-    document.getElementById('info').appendChild(resultObj);
-}</pre>
-    </div>
+    
 </div>
-
+</div>
 </body>
 </html>
