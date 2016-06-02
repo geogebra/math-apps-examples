@@ -8,4 +8,4 @@ With our JavaScript library it's easy to embed GeoGebra in any website, please s
 - https://www.github.com/geogebra/math-apps-examples -- examples of Math Apps embedded in HTML you can clone and play with
 
 # License
-You are free to copy, distribute and transmit GeoGebra for non-commercial purposes. For details see http://www.geogebra.org/license
+You are free to copy, distribute and transmit GeoGebra for non-commercial purposes. For details see https://www.geogebra.org/license

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Example GeoGebra HTML worksheet 2</title>
+    <title>Example GeoGebra applet embedding</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
 	<script src="navigation.js"></script>
@@ -10,14 +10,14 @@
 
 <body>
 <div>
-<h1>Example GeoGebra applet embedding 1</h1>
-<p>This is an example of an HTML file containing three GeoGebra applets loaded from GeoGebraTube.</p>
+<h1>Example GeoGebra applet embedding</h1>
+<p>This is an example of an HTML file containing two GeoGebra applets, one loaded from GeoGebra Materials Platform, the other one from local .ggb file.</p>
 
-<script type="text/javascript" src="//www.geogebratube.org/scripts/deployggb.js"></script>
+<script type="text/javascript" src="https://www.geogebra.org/scripts/deployggb.js"></script>
 <script type="text/javascript">
 
-    // Create applet for material_id 17499 from tube. The second parameter forces not to use webSimple.
-    // The third parameter sets the bordercolor. Additional parameters can be defined as described here: http://wiki.geogebra.org/en/Reference:Applet_Parameters
+    // Create applet for material_id 17499 from GeoGebra Materials Platform. The second parameter forces not to use webSimple.
+    // The third parameter sets the bordercolor. Additional parameters can be defined as described here: https://www.geogebra.org/manual/en/Reference:Applet_Parameters
     var applet1 = new GGBApplet({material_id: "17499", borderColor:"#55FF00"}, true);
 
     //  when used with Math Apps Bundle, uncomment this:
