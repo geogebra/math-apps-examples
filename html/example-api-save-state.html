@@ -38,7 +38,7 @@
                 var applet = new GGBApplet(parameters, '5.0');
                  //  when used with Math Apps Bundle, uncomment this:
                  //  applet.setHTML5Codebase('GeoGebra/HTML5/5.0/web/');
-                window.onload = function() { applet.inject('preferhtml5', 'applet_container'); }
+                window.onload = function() { applet.inject('applet_container'); }
  
                 function saveGgbFile(){ ggbApplet.getBase64(function(b){document.getElementById("Base64").value = b}); }
                 function loadGgbFile(){ ggbApplet.setBase64(document.getElementById("Base64").value); }

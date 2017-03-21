@@ -16,7 +16,7 @@
 
         <script type="text/javascript">
 				var tutorials = {
-				'AG':['Algebra','https://www.geogebra.org/tutorial/graphing'],
+				'AG':['Graphing calculator','https://www.geogebra.org/tutorial/graphing'],
 				'2':['Geometry','https://www.geogebra.org/tutorial/geometry'],				
 				'3':['Spreadsheet','https://www.geogebra.org/tutorial/spreadsheet'],				
 				'4':['CAS','https://www.geogebra.org/tutorial/cas'],
@@ -50,14 +50,14 @@
                         "useBrowserForJS":false,
                         "perspective":"AG"};
 
-                var applet = new GGBApplet(parameters, '4.0', 'applet_container');
+                var applet = new GGBApplet(parameters, '5.0', 'applet_container');
                //  when used with Math Apps Bundle, uncomment this:
                //  applet.setHTML5Codebase('GeoGebra/HTML5/5.0/web3d/');
 
-                window.onload = function() { applet.inject('applet_container','preferhtml5'); updateHelp('AG');}
+                window.onload = function() { applet.inject('applet_container'); updateHelp('AG');}
 
         </script>
-		<button onclick="perspective('AG')">Algebra</button>
+		<button onclick="perspective('AG')">Graphing calculator</button>
 		<button onclick="perspective('2')">Geometry</button>
 		<button onclick="perspective('3')">Spreadsheet</button>
 		<button onclick="perspective('4')">CAS</button>
