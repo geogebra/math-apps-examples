@@ -2,25 +2,75 @@
 <html>
 
 <head>
-        <title>Tool applets</title>
+        <title>GeoGebra Math Apps in Popup Dialogs</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<script src="navigation.js"></script>
 		<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 		<script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
 		 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<style>
+		body div.ui-dialog {
+			z-index:3!important;
+		}
+		body .ui-dialog .ui-dialog-content{
+			padding:5px;
+			overflow:hidden;
+		}
+		body .ui-dialog .ui-dialog-title{
+			color:#999999;
+		}
+		body .ui-dialog .ui-dialog-title img{
+			vertical-align: middle;
+			margin-left: 1em;
+		}
+		body .ui-widget-header {
+			background-color:#FAFAFA;
+			border-color:#999999;
+		}
+		body {
+			overflow:hidden;
+		}
 		
+		.apps button{
+			padding:10px 5px 10px 34px;
+			border-radius:5px;
+			background-color:#FAFAFA;
+			border:#999999 1px solid;			
+			background-repeat:no-repeat;
+			background-position:7px 7px;
+			
+		}
+		.app-icon-graphing{
+			background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABUUlEQVR42s2UO4rDMBCGc4QcIUcQ+AGBFCrWhQtDQFU6NX6UC3sBVakWUqRKlSP4CL5AIHWqHMGQC0zmNwkka42SrXYFg7DH/jQz/4wmk/+4qqr6ZHNeZ5IkKoqilq1j2yulpm8AN2VZdl4nQ87WfpNzBzLmixaLj+4VEDBvhHEca60L2u1osO32QnwAvRFhz1A7cnB6MwAAAhBR8nMfgjVNM2MgMVB5nXme03yuqSiqYTfGEL/XgeiWAIbU6iEM0kfEt/q0AaATBWHnEYr5IkD0AUE2Yi186fH7s9Rn+AeH+k6ySFfqM0Cl+llrx71a1/VeqoUUPf5BmUL1c6HmhUEoCJZlmUJGEFICBtsDPrTQz5bypouPxVo8rDRNab0+DU2PXZyie/+9GjEA7mMJCwHl2+IZ2K1WbhhJ7Px8/N1tMZ716cPV1kIgcXxEtf56XQGPqeVE7wnHUwAAAABJRU5ErkJggg==");
+		}
+		.app-icon-cas{
+			background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAoUlEQVR42mNgoAWYOfN/AxD/R8aUGvh/1EDaGJiWltYAwhkZGQ4gfmpqqgFMjFwD+4H4PxC/T0hIEADS96F88gyEGnIeagjMsPMgOZCrYa7FcDW+MIR68z8Mg/gUGQhUGIBsICw8gbQCiI2MifXye6jL9sO8DhVvQLYIhImJlPUww5ANB0UWyZEC8hLIICg2gHkfJgaSH816tDWQugUsNQEAdJWc53Aqg8YAAAAASUVORK5CYII=");
+		}
+		.app-icon-geometry{
+			background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABkUlEQVR42sWUv2rCUBTGfYQ+Qh+hIAiCoNPdAoGCcAchDvkjZAgIAcHhQiAgBBwEwclN6JTBteDWSXDuVOhcEAqdT/OdJhI1ikahgW/KPb9zznfOvZXKf362bc8dx2ndBQaQZVmU6OMuQNM0V8PhC7nuAFDvVpgB0HT6Q1H0DuDWMIyHUjAEAjAabWg2I1a/HwE6LgVMAhUAGQyaTL4ApMTXx0uq8eAX1Ol0VkII8v14DwjBT5w559MTJojMvj8lpZYkhEbVapUlpdoDws9ez0Ol+kmfPC/gdhCg1JpBmrYgXV9SrdY6gobhW/EaYWGRDVmzw0JIqtc16naJBSgSIFEeiiLg86HxW7SYHXLdBQe32+sdEGo05FGVR2uEScE3/Pib4HdSWYuBzaa1J1QsxDP7mxe6Q5f5YeyAYYiMs0JJ2U9a1zE4VaR8y2zw4WocCtNPzsaXLG+Mq3UONh5/8jLjGl5yV7ntwWB+EpY+CpurHgBAERgEr+wphBuRLvDm6gcBlWJa6buXiYdQ+nW59fsFGrne02E2n/cAAAAASUVORK5CYII=");
+		}
+		.app-icon-3d{
+			background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABmklEQVR42r2Uz4bDUBTG+wh9hHmEaJtSShL6R0soJUSjUpG0pYtQSukidFVCF6V01fWsZtHtkBcYsp5Vd7MaQpn1mftdUtpJO/2n4SNc9+ec833nplLP/kzTTD8UWKvV5o7jzB8CE0VRqFQqxIDU6/Xku4HZbDZQVZUmk1dAo7vaz2QyJgOSpmnk+580nb6TbdvBTTBBENL5vBIpypB0XafF4ptWK6LRaIlK3auBuVxuXq+vqFr1ybIsDoOWyx/q911UKlwDkwsFlTodIklyaDAY74EQ2mdVbi+eJ5tbqGkfHFguWzQc+gdAyPM21O1215cY4WJugEGyLHOHj4GQ607RuvmvEa3WF4e12ztCZFBNEhBGsXlGLJ8vp1pdw4i4OrQN4GwWJgIhnLF5holGFIv6HgY1mwGPDEw4BYTG4zX9WU0Y0WhsDoCo1jAMHpVzQJxjngzaON6KbankUTxD/GOHT0Hi7UGFiBailOgyA0cItCQZPDLxZZiDTYkvM70xeXg0zmYSbrOZeoqiRKgQQ0fmLrr81If11u8XNuKiWSsFDf0AAAAASUVORK5CYII=");
+		}
+		.app-icon-spreadsheet{
+			background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAA+UlEQVR42mNgoAWYOfN/PxD/R8MNMHZb2024+PTp/x1gYg0NZ/5PnvwJrh7ZwP+4DOzpefbf2NgYrBnZQF/ftP9paTP/Ozj4wvUQZSBIU0JCz//g4GIMA0GYZANhLnFziwS7FtlAkKth4kQZCFJYWbkfzAdpBmGYgcXFm8EW5eQsw3QhSBEWrIBNPC0t7X919YoCbHJ4XYiiAAmADMzIyHAglGzA4WBp6YASmxQZCIvRwW0gyDBYEqDIQFyxSSrGG8ugpAFyCTqGasYqh2IgKIGCUn9kZAP1kg3IUKoZCCqOQC6EFUcUGwjKmyADQSULNQxsoGrWoyYAAPbGRhk4T6cwAAAAAElFTkSuQmCC");
+		}
+		.app-icon-probability{
+			background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAA4UlEQVR42mNgGPIgNTU1IS0t7T4Ig9gUG5aZWfC/p+cmGIPYZBuakZGhAHTVe5BBM2f+B2MQGyQGkiPZQKDG9TU1K+GGwTBIDCRHquscQN6bNu0rhoEgMZAcSA0pYbe/oWEzhmEwDJIDqSHadaBwwuY6ZFdCw9KBKNcBFTfgMgyGQWoIuhIWswkJCQKEDASpIRjjoNgD2QxiEzIQqr4BZ4wDJQJgriPWQJgrQXrRw80AXYIYA5EdAjID2XUgwwqQLSHWQKj+ApAZKHkWPQhIMRCXGRQZiAKMjY3/UwMPjQIZAAbrs969Pdb5AAAAAElFTkSuQmCC");
+		}
+		</style>
 </head>
 
 <body>
 <div>
-        <h1>Tool applets</h1>
-        <p style="width:800px">This demo shows embedding of <a href="example7.html">tool applets</a> into a draggable dialog. The dialog is provided by <a href="https://jqueryui.com/draggable/">JQueryUI</a>.</p>
-<p><img src="https://www.geogebra.org/images/worksheet/icon-info.png"> <a id="tutorial-link" target="_blank">Tutorial</a></p>
+        <h1>GeoGebra Math Apps in Popup Dialogs</h1>
+        <p style="width:800px">This demo shows embedding of <a href="example7.html">GeoGebra Math Apps</a> into a draggable dialog. The dialog is provided by <a href="https://jqueryui.com/draggable/">JQueryUI</a>.</p>
         <script type="text/javascript" src="https://www.geogebra.org/scripts/deployggb.js"></script>
 
         <script type="text/javascript">
+				var questionmark = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABE0lEQVR42t1V2w3CMAxkBEZgBEZghI7QERihG+Sjr8+MwAiMwAgdoSOUHLIlExwnBVEJIllNY/l1vji73d+vcRwPXded+773wzBcIdjjDLqPHMNRkCUjfnWgkGUVDGc4oIxr59ye9djjjHQIMsNmjfNioyiZqgSWmeSoOGpInnT4ZzsTLsZcZkJwTBr2icq9lf0DcwUGYD2FrxO4L3G2rFOrICrCsNaC875t2xMHwD5CoMY5fCXhkWyJF8F1owBTQq/DxOUVOn8hgUhUhTkbQEBoMiUZIAcRXyw0OlOlDpHVZNlgq0dmky2aygq15hbRNHXRhO7C9MyMGP/WqCBdE3N/1aj4+rDbZFxv8uBs8mT+zLoDT+fe+64Z+dIAAAAASUVORK5CYII=";
 				var tutorials = {
-				'AG':['Graphing','https://www.geogebra.org/tutorial/graphing'],
+				'1':['Graphing Calculator','https://www.geogebra.org/tutorial/graphing'],
 				'2':['Geometry','https://www.geogebra.org/tutorial/geometry'],				
 				'3':['Spreadsheet','https://www.geogebra.org/tutorial/spreadsheet'],				
 				'4':['CAS','https://www.geogebra.org/tutorial/cas'],
@@ -29,19 +79,28 @@
 				};
 				var lastApp = null;
 				function updateHelp(p){
-					document.getElementById('tutorial-link').href = tutorials[p][1];
-					document.getElementById('tutorial-link').innerText = tutorials[p][0]+" Tutorial";
+					$("#dialog").dialog("option",{"title":"GeoGebra " + tutorials[p][0] + "<a target=\"_blank\" href=\""+tutorials[p][1]+"\"><img src=\""+questionmark+"\"/></a>"});
 				}
 				function perspective(p){
 					updateHelp(p);
-					if(lastApp === p){
+					if(lastApp === p && $("#dialog").dialog("isOpen")){
 						$("#dialog").dialog("close");
 						lastApp = null;
-					}else{
-						$("#dialog").dialog("open");
-						ggbApplet && ggbApplet.setPerspective(p);
-						ggbApplet && ggbApplet.showToolBar(p != "AG");
-						lastApp = p;
+					//if applet is initialized open it	
+					}else {
+						function doSetPerspective(){	
+							$("#dialog").dialog("open");
+							ggbApplet.newConstruction();
+							ggbApplet.setPerspective(p);
+							ggbApplet.showToolBar(p != "1" && p != "6");
+							checkWindowSize();
+							lastApp = p;
+						}
+						if(window.ggbApplet && ggbApplet.setPerspective){
+							doSetPerspective();
+						}else{
+							window.ggbOnInit = doSetPerspective;
+						}
 					}
 					
 				}
@@ -61,33 +120,68 @@
                         "errorDialogsActive":true,
                         "showTutorialLink":true,
                         "showLogging":true,
-                        "useBrowserForJS":false,
-                        "perspective":"AG"};
+                        "useBrowserForJS":true,
+						"disableAutoScale":true,
+                        "perspective":"1"};
                 var applet = new GGBApplet(parameters, '5.0', 'applet_container');
                 //  when used with Math Apps Bundle, uncomment this:
-                //  applet.setHTML5Codebase('GeoGebra/HTML5/5.0/web/');
-                window.onload = function() { applet.inject('applet_container'); updateHelp('AG');}
+                //  applet.setHTML5Codebase('GeoGebra/HTML5/5.0/web3d/');
+                window.onload = function() { applet.inject('applet_container'); updateHelp('1');}
         </script>
-		<button onclick="perspective('AG')">Graphing calculator</button>
-		<button onclick="perspective('2')">Geometry</button>
-		<button onclick="perspective('3')">Spreadsheet</button>
-		<button onclick="perspective('4')">CAS</button>
-		<button onclick="perspective('5')">3D Geometry</button>
-		<button onclick="perspective('6')">Probability</button>
+		<div class="apps">
+		<button onclick="perspective('1')" class="app-icon-graphing">Graphing calculator</button>
+		<button onclick="perspective('2')" class="app-icon-geometry">Geometry</button>
+		<button onclick="perspective('3')" class="app-icon-spreadsheet">Spreadsheet</button>
+		<button onclick="perspective('4')" class="app-icon-cas">CAS</button>
+		<button onclick="perspective('5')" class="app-icon-3d">3D Geometry</button>
+		<button onclick="perspective('6')" class="app-icon-probability">Probability</button>
+		</div>
 
-
-<div id="dialog" title="Basic dialog">
+<div id="dialog" title="GeoGebra Math Apps">
   <div id="applet_container" style="min-width:800px;min-height:600px"></div>
 </div>
 
-	
-	
-        
-	
 		<script>
+		var dialogPaddingV = 60;
+		var dialogPaddingH = 10;		
+		var dialogMarginH = 10;
+		var dialogMarginV = 10;
+		function checkWindowSize(){
+		if(!$("#dialog").dialog("isOpen")){
+		  return;
+		}
+				if(window.innerWidth < $("#dialog").dialog("option","width") + $("#dialog").parent().offset()["left"] + dialogMarginH){
+					$("#dialog").parent().offset({"left":window.innerWidth - $("#dialog").dialog("option","width") - dialogMarginH});
+				}
+				if(window.innerWidth < $("#dialog").dialog("option","width") + dialogMarginH){
+					$("#dialog").parent().offset({"left":0})
+					$("#dialog").dialog("option",{"width":window.innerWidth - dialogMarginH})
+					window.ggbApplet && ggbApplet.setWidth(window.innerWidth -dialogPaddingH - dialogMarginH);
+				}
+				console.log(window.innerHeight);
+				if(window.innerHeight < $("#dialog").dialog("option","height") + $("#dialog").parent().offset()["top"] + dialogMarginV){
+					$("#dialog").parent().offset({"top":window.innerHeight - $("#dialog").dialog("option","height") - dialogMarginV});
+				}
+				if(window.innerHeight < $("#dialog").dialog("option","height")){
+					$("#dialog").parent().offset({"top":0})
+					$("#dialog").dialog("option",{"height":window.innerHeight})
+					window.ggbApplet && ggbApplet.setHeight(window.innerHeight -dialogPaddingV);
+				}
+		}
 		$( function() {
-    		$( "#dialog" ).dialog({width:850}).dialog("close");
-  		} );
+			function dialogResize(e,ui){
+				
+				ggbApplet.setSize(ui.size.width-dialogPaddingH, ui.size.height-dialogPaddingV);
+			}
+    		$("#dialog" ).dialog({width:810,height:600 + dialogPaddingV,resize:dialogResize}).dialog("close");
+			$("#dialog").data('dialog').uiDialog.draggable('option', {
+				containment: [-100000,-10000,10000,10000],
+				cancel: '.ui-dialog-titlebar-close, .GeoGebraFrame',
+				handle: '.ui-dialog-titlebar, .ui-dialog-content'} );
+			 
+			window.addEventListener("resize",checkWindowSize);
+			}
+		);
 		</script>
 		</div>
 </body>
