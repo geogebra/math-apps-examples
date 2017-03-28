@@ -30,7 +30,6 @@
 		body {
 			overflow:hidden;
 		}
-		
 		.apps button{
 			padding:10px 5px 10px 34px;
 			border-radius:5px;
@@ -88,8 +87,8 @@
 						lastApp = null;
 					//if applet is initialized open it	
 					}else {
-						function doSetPerspective(){	
-							$("#dialog").dialog("open");
+					$("#dialog").dialog("open");
+						function doSetPerspective(){
 							ggbApplet.newConstruction();
 							ggbApplet.setPerspective(p);
 							ggbApplet.showToolBar(p != "1" && p != "6");
@@ -173,7 +172,12 @@
 				
 				ggbApplet.setSize(ui.size.width-dialogPaddingH, ui.size.height-dialogPaddingV);
 			}
-    		$("#dialog" ).dialog({width:810,height:600 + dialogPaddingV,resize:dialogResize}).dialog("close");
+    		$("#dialog" ).dialog({
+				width:810,
+				height:600 + dialogPaddingV,
+				minHeight: 300,
+				resize:dialogResize,
+				autoOpen: false});
 			$("#dialog").data('dialog').uiDialog.draggable('option', {
 				containment: [-100000,-10000,10000,10000],
 				cancel: '.ui-dialog-titlebar-close, .GeoGebraFrame',
