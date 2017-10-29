@@ -2,21 +2,25 @@
 <html>
 
 <head>
-        <title>Tool applets</title>
+        <title>Apps with Toolbar: GeoGebra Classic</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<script src="navigation.js"></script>
 </head>
 
 <body>
 <div>
-        <h1>Tool applets</h1>
-        <p style="width:800px">It is possible to have applet without construction, the perspective can be given by parameter "perspective" and changed via API later. For details please refer to <a href="https://wiki.geogebra.org/en/SetPerspective_Command">documentation</a>.</p>
+        <h1>Apps with Toolbar: GeoGebra Classic</h1>
+        <p style="width:800px">This page shows how to embed GeoGebra Classic without construction in a webpage.
+        For details about customization please refer to <a href="https://wiki.geogebra.org/en/Reference:Applet_Parameters">documentation</a>. Please check out embedding examples for our other apps:</p>
+          <a class="btn" href="example-graphing.html">Graphing Calculator</a>
+        <a class="btn" href="example-geometry.html">Geometry</a>
+        <a class="btn active"" href="example-tools.html">Classic</a>
 <p><img src="https://www.geogebra.org/images/worksheet/icon-info.png"> <a id="tutorial-link" target="_blank">Tutorial</a></p>
         <script type="text/javascript" src="https://cdn.geogebra.org/apps/deployggb.js"></script>
 
         <script type="text/javascript">
 				var tutorials = {
-				'AG':['Graphing calculator','https://www.geogebra.org/tutorial/graphing'],
+				'AG':['Graphing','https://www.geogebra.org/tutorial/graphing'],
 				'2':['Geometry','https://www.geogebra.org/tutorial/geometry'],				
 				'3':['Spreadsheet','https://www.geogebra.org/tutorial/spreadsheet'],				
 				'4':['CAS','https://www.geogebra.org/tutorial/cas'],
@@ -57,12 +61,13 @@
                 window.onload = function() { applet.inject('applet_container'); updateHelp('AG');}
 
         </script>
-		<button onclick="perspective('AG')">Graphing calculator</button>
-		<button onclick="perspective('2')">Geometry</button>
-		<button onclick="perspective('3')">Spreadsheet</button>
-		<button onclick="perspective('4')">CAS</button>
-		<button onclick="perspective('5')">3D Geometry</button>
-		<button onclick="perspective('6')">Probability</button>
+        GeoGebra Classic provides several perspectives, you can chose which one should be used at start and change it later via API. 
+		 <a class="btns" onclick="perspective('AG')">Graphing</a>
+		 <a class="btns" onclick="perspective('2')">Geometry</a>
+		 <a class="btns" onclick="perspective('3')">Spreadsheet</a>
+		 <a class="btns" onclick="perspective('4')">CAS</a>
+		 <a class="btns" onclick="perspective('5')">3D Geometry</a>
+		 <a class="btns" onclick="perspective('6')">Probability</a>
 
 
         <div id="applet_container"></div>
