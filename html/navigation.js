@@ -19,8 +19,12 @@ function addDrawer(){
 	'<li> <a href="http://dev.geogebra.org/examples/html/example-api.html">Single applet + API</a></li>'+
 	'<li> <a href="http://dev.geogebra.org/examples/html/example-api-multiple.html">Two applets + API</a></li>'+
 	'<li> <a href="http://dev.geogebra.org/examples/html/example-api-save-state.html">Single applet + API for saving</a></li>'+
-	'<li> <a href="http://dev.geogebra.org/examples/html/example-tools.html">Apps with toolbar</a></li>'+
-	'<li> <a href="http://dev.geogebra.org/examples/html/example-popup.html">Apps with toolbar in a popup dialog</a></li>'+
+    '<li> <a href="http://dev.geogebra.org/examples/html/example-graphing.html">Graphing Calculator with Toolbar</a></li>'+
+    '<li> <a href="http://dev.geogebra.org/examples/html/example-geometry.html">Geometry with Toolbar</a></li>'+
+    '<li> <a href="http://dev.geogebra.org/examples/html/example-tools.html">GeoGebra Classic with Toolbar</a></li>'+
+    '<li> <a href="http://dev.geogebra.org/examples/html/example-popup-graphing.html">Graphing Calculator in a Popup Dialog</a></li>'+
+    '<li> <a href="http://dev.geogebra.org/examples/html/example-popup-geometry.html">Geometry in a Popup Dialog</a></li>'+
+    '<li> <a href="http://dev.geogebra.org/examples/html/example-popup.html">GeoGebra Classic in a Popup Dialog</a></li>'+
 	'<li> <a href="http://dev.geogebra.org/examples/html/example-api-listeners.html">Event listeners</a></li>'+
 	'<li> <a href="http://dev.geogebra.org/examples/html/example-api-sync.html">Communication between applets</a></li>'+
 	'<li> <a href="http://dev.geogebra.org/examples/html/example-exercise.html">Exercise</a></li></ul>'+
@@ -38,8 +42,19 @@ function addDrawer(){
 	document.body.insertBefore(glassDiv,document.body.children[1]);
 	
 	document.getElementById("drawerToggle").addEventListener("click",function(){
-		menuDiv.style.display = menuDiv.style.display=="block" ? "none" : "block";
-		glassDiv.style.display = menuDiv.style.display;
+        var visible = menuDiv.style.display == "block";
+        console.log(visible);
+        if(!visible){
+            menuDiv.style.display = glassDiv.style.display = "block";
+        }else {
+            menuDiv.className = glassDiv.className = "animateOut";
+            var callback = function(){
+                menuDiv.removeEventListener("animationend",callback);
+                menuDiv.style.display = glassDiv.style.display = "none";
+                menuDiv.className = glassDiv.className = "";
+            }
+            menuDiv.addEventListener("animationend",callback);
+        }
 	});
 }
 

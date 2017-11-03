@@ -58,9 +58,13 @@ div.sample-toolbar {
     position: absolute;
     z-index: 2000;
     left: 0;
+    transform: translateX(0);
     padding: 10px;
 	animation-name:animDrawer;
 	animation-duration:0.2s;
+}
+#drawer.animateOut{
+    animation-name:animDrawerOut;
 }
 
 .sample-toolbar a, #drawer a{
@@ -72,7 +76,7 @@ div.sample-toolbar {
 	padding-left:10px;
 }
 #drawer li{
-	padding-bottom:5px;
+	padding-bottom:8px;
 }
 
 #drawer a{
@@ -94,14 +98,27 @@ div.sample-toolbar {
 	animation-name:animGlass;
 	animation-duration:0.2s;
 }
+#drawerGlass.animateOut{
+    animation-name:animGlassOut;
+}
+
 @keyframes animGlass {
 	0% {opacity:0;}
-	100% {opacity: 60%;}
+	100% {opacity: 0.6;}
+}
+
+@keyframes animGlassOut {
+    0% {opacity: 0.6;}
+	100% {opacity:0;}	
 }
 
 @keyframes animDrawer {
-	0% {left: -200px;}
-	100% {left: 0px;}
+	0% {transform: translateX(-100%);}
+	100% {transform: translateX(0);}
+}
+@keyframes animDrawerOut {
+	0% {transform: translateX(0);}
+    100% {transform: translateX(-100%);}
 }
 
 a.btn,a.btns{
