@@ -28,7 +28,7 @@ function addDrawer(){
     '<li> <a href="https://dev.geogebra.org/examples/html/example-popup.html">GeoGebra Classic in a Popup Dialog</a></li>'+
 	'<li> <a href="https://dev.geogebra.org/examples/html/example-api-listeners.html">Event listeners</a></li>'+
 	'<li> <a href="https://dev.geogebra.org/examples/html/example-api-sync.html">Communication between applets</a></li>'+
-	'<li> <a href="https://dev.geogebra.org/examples/html/example-exercise.html">Exercise</a></li></ul>'+
+	'</ul>'+
 	'<h4>Documentation</h4><ul><li><a href="https://www.geogebra.org/manual/en/Reference:Math_Apps_Embedding">Math Apps Embedding</a></li>'+
 	'<li><a href="https://www.geogebra.org/manual/en/Reference:JavaScript">JavaScript API</a></li></ul>';
 
