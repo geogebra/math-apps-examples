@@ -13,7 +13,8 @@ document.body.insertBefore(menuDiv,document.body.children[0]);
 function addDrawer(){
 	var filename = window.location.pathname.split("/").slice(-1)[0];
 	var menu =
-	'<h2>GeoGebra Math Apps</h2><h4>Examples</h4><ul><li> <a href="https://dev.geogebra.org/examples/html/example-single.html">Single applet</a></li>'+
+	'<h2>GeoGebra Math Apps</h2><h4>Examples</h4><ul><li> <a href="https://dev.geogebra.org/examples/html/example-iframe.html">Single applet: iframe</a></li>'+
+	'<li> <a href="https://dev.geogebra.org/examples/html/example-single.html">Single applet</a></li>'+
 	'<li> <a href="https://dev.geogebra.org/examples/html/example-3d.html">Single applet 3D</a></li>'+
 	'<li> <a href="https://dev.geogebra.org/examples/html/example-multiple.html">Two applets</a></li>'+
 	'<li> <a href="https://dev.geogebra.org/examples/html/example-api.html">Single applet + API</a></li>'+
