@@ -2,7 +2,7 @@ function addGithubLink(){
 	var filename = window.location.pathname.split("/").slice(-1)[0];
 var menu =
 '<a href="#" id=drawerToggle class="material-icons">menu</a>'+
-'<div id=githubLink><a href="https://github.com/geogebra/math-apps-examples/blob/master/html/'+filename+'">View on GitHub</a></span>';
+'<div id=githubLink><a target="_blank" href="https://github.com/geogebra/math-apps-examples/blob/master/html/'+filename+'">View on GitHub</a></span>';
 var menuDiv = document.createElement('div');
 menuDiv.className = "sample-toolbar";
 menuDiv.innerHTML = menu;
