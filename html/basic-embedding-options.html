@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <title>Single applet: iframe embedding</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="navigation.js"></script>
+</head>
+
+<body>
+<div class="contentBox">
+        <h1>Embedding Options</h1>
+    
+	<p><h5>Direct Embedding</h5></p>
+	
+	 <script type="text/javascript" src="https://www.geogebra.org/apps/deployggb.js"></script>
+        <script type="text/javascript">
+                var parameters = {
+                        "width":800,
+                        "height":400,
+                        "prerelease":false,
+                        "showToolBar":false,
+                        "borderColor":null,
+                        "showMenuBar":false,
+                        "showAlgebraInput":false,
+                        "showResetIcon":true,
+                        "enableLabelDrags":false,
+                        "enableShiftDragZoom":true,
+                        "enableRightClick":false,
+                        "capturingThreshold":null,
+                        "showToolBarHelp":true,
+                        "errorDialogsActive":true,
+                        "useBrowserForJS":false,
+                        "material_id":"zrtmrj3s"};
+                var applet = new GGBApplet(parameters, '5.0', 'applet_container');
+              //  when used with Math Apps Bundle, uncomment this:
+              //  applet.setHTML5Codebase('GeoGebra/HTML5/5.0/web/');
+
+                window.onload = function() { applet.inject(); }
+        </script>
+
+        <div id="applet_container"></div>
+	
+	<p><h5>Iframe Embedding</h5></p>
+	<iframe 
+    scrolling="no" 
+    title="First Activity" 
+    src="https://www.geogebra.org/material/iframe/id/zrtmrj3s/width/800/height/400/border/999999/sfsb/true/szb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false"
+    width="800px" 
+    height="400px" 
+    style="border:0px;"
+    fullscreen> 
+   </iframe>
+   
+</div>
+</body>
+
+</html>

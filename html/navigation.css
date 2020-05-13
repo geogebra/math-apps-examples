@@ -1,12 +1,16 @@
 body{
-	font-family:'Century Gothic', 'Muli', sans-serif;
+	font-family:Roboto,sans-serif;
 	margin:0;
+	font-size:16px;
 }
 
 body>div{
 	max-width:1000px;
 	margin:auto;
-	padding-left: 20px;
+	padding-left: 48px;
+	position: relative;
+	top:64px;
+	overflow: auto;
 }
 
 input[type=button]{
@@ -20,11 +24,12 @@ input[type=button]{
 #githubLink{
 	position: absolute;
     right: 0;    
-    padding-right: 5em;
+    padding: 24px;
+	line-height: 1;
 }
 
 .sample-toolbar  a{
-	color:white;
+	color:rgba(0,0,0,.6);
 }
 
 div.sample-toolbar {
@@ -33,11 +38,10 @@ div.sample-toolbar {
     top: 0;
     left: 0;
     z-index: 1;
-    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.2);
 	display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
-    position: relative;
+    display: block;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -46,22 +50,41 @@ div.sample-toolbar {
     justify-content: space-between;
     width: 100%;
     height: 64px;
-    padding: 24px 16px;
+	padding: 0px;
     box-sizing: border-box;
-    background-color: #3f51b5;
+	
+    background-color: #fff;
+	color: rgba(0,0,0,0.87);
+	font-size: 100%;
+	z-index: 2100;
+	
+}
+.headerLogo{
+	height: 48px;
+	margin: 8px;
+	float: left;
+}
+.siteName{
+	font-size: 24px;
+	font-weight: normal;
+	color: rgba(0,0,0,.6);
+	letter-spacing: 0.43px;
+	float:left;
 }
 
 #drawer{	
 	display:none;
-	height: calc(100% - 84px);
     background-color: white;
-    position: absolute;
+	height: 100%;
+    position: fixed;
+	overflow: auto;
     z-index: 2000;
     left: 0;
     transform: translateX(0);
-    padding: 10px;
+    padding: 0px;
 	animation-name:animDrawer;
 	animation-duration:0.2s;
+	box-shadow: 0 6px 16px rgba(0,0,0,0.28);
 }
 #drawer.animateOut{
     animation-name:animDrawerOut;
@@ -70,18 +93,53 @@ div.sample-toolbar {
 .sample-toolbar a, #drawer a{
 	text-decoration:none;
 }
+.material-icons {
+	margin: 14px 2px 14px 18px;
+	padding: 6px;
+	cursor: pointer;
+	height: 36px;
+	float: left;
+	box-sizing: border-box;
+	border-radius: 50%;
+}
+.material-icons:hover, .material-icons:focus {
+	background-color: #e5e5e5;
+}
 
 #drawer ul{
 	list-style:none;
-	padding-left:10px;
+	padding-left:0px;
+	padding: 0px 10px 8px 0px;
+	margin: 0px;
+	border-bottom: solid #E4E4E4 1px;
 }
 #drawer li{
-	padding-bottom:8px;
+	
+	width: 100%;
+	height: 48px;
+	line-height: 48px;
+	border-radius: 0px 24px 24px 0px;
+	white-space: nowrap;
+}
+#drawer li:hover{
+	background-color: #EEEEEE;
 }
 
 #drawer a{
 	color:rgba(0,0,0,.87);
+	margin-left: 24px;
+	font-size: 87%;
+	padding-right: 6px;
+}
+
+#drawer h4{
+	padding-left: 24px;
+	font-size: 112.5%;
+	color:rgba(0,0,0,.87);
 	font-weight: 500;
+	letter-spacing: -0.65px;
+	height: 32px;
+	margin-bottom: 0px;
 }
 
 #drawerGlass{
@@ -127,7 +185,7 @@ a.btn,a.btns{
     margin-bottom: 20px;
     margin-right: 10px;
     text-decoration: none;
-    color: #000;
+    color: rgba(0,0,0,0.87);
     opacity: 0.85;
     background-color: #eee;
     display:inline-block;    
@@ -144,4 +202,25 @@ a.btns{
 
 a.btn.active {
     background-color: #aaa;
+}
+.contentBox h1{
+	color: rgba(0,0,0,.87);
+	font-size: 170%;
+	font-weight: 400;
+	padding: 24px 0px 0px 0px;
+	margin:0px;
+}
+.contentBox h5{
+	color: rgba(0,0,0,.87);
+	font-size: 120%;
+	font-weight: 400;
+	padding: 24px 0px 8px 0px;
+	margin:0px;
+}
+.text{
+	color: rgba(0,0,0,.54);
+	font-size: 100%;
+	font-weight: 400;
+	padding: 0px 0px 16px 0px;
+	margin:0px;
 }

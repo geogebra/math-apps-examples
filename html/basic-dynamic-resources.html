@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <title>Dynamic Resources (Basic)</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="navigation.js"></script>
+</head>
+
+<body><div class="contentBox">
+        <h1>Dynamic Resources (Basic)</h1>
+        <p></p>
+
+        <script type="text/javascript" src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+        <script type="text/javascript">
+
+			 var parameters1 = {
+                        "width":800,
+                        "height":400,
+                        "prerelease":false,
+                        "showToolBar":false,
+                        "borderColor":null,
+                        "showMenuBar":false,
+                        "showAlgebraInput":false,
+                        "showResetIcon":false,
+                        "enableLabelDrags":false,
+                        "enableShiftDragZoom":false,
+                        "enableRightClick":false,
+                        "capturingThreshold":null,
+                        "showToolBarHelp":false,
+                        "errorDialogsActive":true,
+                        "useBrowserForJS":false,
+                        "material_id":"zrtmrj3s"};
+                var applet1 = new GGBApplet(parameters1, '5.0', 'applet_container1');
+              
+			  var parameters2 = {
+                        "width":800,
+                        "height":400,
+                        "prerelease":false,
+                        "showToolBar":false,
+                        "borderColor":null,
+                        "showMenuBar":false,
+                        "showAlgebraInput":false,
+                        "showResetIcon":false,
+                        "enableLabelDrags":false,
+                        "enableShiftDragZoom":false,
+                        "enableRightClick":false,
+                        "capturingThreshold":null,
+                        "showToolBarHelp":false,
+                        "errorDialogsActive":true,
+                        "useBrowserForJS":false,
+                        "material_id":"ybkgcpzq"};
+                var applet2 = new GGBApplet(parameters2, '5.0', 'applet_container2');
+              //  when used with Math Apps Bundle, uncomment this:
+              //  applet.setHTML5Codebase('GeoGebra/HTML5/5.0/web/');
+				
+				var parameters3 = {
+                        "width":800,
+                        "height":500,
+                        "prerelease":false,
+                        "showToolBar":false,
+                        "borderColor":null,
+                        "showMenuBar":false,
+                        "showAlgebraInput":false,
+                        "showResetIcon":false,
+                        "enableLabelDrags":false,
+                        "enableShiftDragZoom":false,
+                        "enableRightClick":false,
+                        "capturingThreshold":null,
+                        "showToolBarHelp":false,
+                        "errorDialogsActive":false,
+                        "useBrowserForJS":false,
+                        "material_id":"gzhfuknz"};
+                var applet3 = new GGBApplet(parameters3, '5.0', 'applet_container3');
+              //  when used with Math Apps Bundle, uncomment this:
+              //  applet.setHTML5Codebase('GeoGebra/HTML5/5.0/web/');
+
+                window.onload = function() { 
+					applet1.inject(applet_container1);
+					applet2.inject(applet_container2);
+					applet3.inject(applet_container3);
+					}
+				
+
+        </script>
+		
+		<p>
+			<h5>Thales Circle</h5>
+		<div class="text"> Drag the point on the circle to explore the angles of the triangle.</div>
+        <div id="applet_container1"></div>
+		</p>
+		
+		<p>
+			<h5>Addition Trainer</h5>
+		<div class="text"> Press one of the 3 buttons to solve the addition.</div>
+        <div id="applet_container2"></div>
+		</p>
+		<p>
+			<h5>Equation Trainer</h5>
+		<div class="text"> Drag the 2 points to graph the equation.</div>
+		<div id="applet_container3"></div>
+		</p>
+		
+	
+</div>
+</body>
+
+</html>
