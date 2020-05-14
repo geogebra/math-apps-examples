@@ -2,24 +2,28 @@
 <html>
 
 <head>
-        <title>Apps with Toolbar: Graphing Calculator</title>
+        <title>Apps Integration</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<script src="navigation.js"></script>
 </head>
 
 <body>
-<div>
-        <h1>Apps with Toolbar: Graphing Calculator</h1>
-        <p style="width:800px">This page shows how to embed GeoGebra Graphing Calculator without construction in a webpage. 
-        For details about customization please refer to <a href="https://wiki.geogebra.org/en/Reference:Applet_Parameters">documentation</a>. Please check out embedding examples for our other apps:</p>
-          <a class="btn active" id="app_graphing" href="example-graphing.html">Graphing Calculator</a>
-        <a class="btn" id="app_geometry" href="example-geometry.html">Geometry</a>
-        <a class="btn" id="app_classic" href="example-tools.html">Classic</a>
+<div  class="contentBox">
+        <h1>Apps Integration</h1>
+	
+		<p><a class="appBtn app-icon-graphing active" id="app_graphing" href="example-graphing.html">Graphing Calculator</a>
+        <a class="appBtn app-icon-geometry" id="app_geometry" href="example-geometry.html">Geometry</a>
+        <a class="appBtn app-icon-classic" id="app_classic" href="example-tools.html">Classic</a></p>
+		
+		<h5>Graphing Calculator</h5>
+        <p class="text">GeoGebra Graphing Calculator can be embedded as an app. Preloading a resource is optional. <br>
+        For details about customization please refer to <a  class="inlineLink" target="_blank" href="https://wiki.geogebra.org/en/Reference:Applet_Parameters">Documentation</a>.<br>
+		For details about the app have a look at <a class="inlineLink" target="_blank" href="https://www.geogebra.org/m/vd6UC685">Learn Graphing Calculator</a>.</p>
+        
+		
         <script type="text/javascript" src="https://cdn.geogebra.org/apps/deployggb.js"></script>
-
         <script type="text/javascript">
 				function perspective(p){
-					updateHelp(p);
 					ggbApplet.setPerspective(p);
 				}
                 var parameters = {
@@ -50,7 +54,7 @@
         </script>
 
 
-        <div id="applet_container"></div>
+      <p>  <div id="applet_container"></div></p>
 		</div>
 </body>
 

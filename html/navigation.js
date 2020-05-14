@@ -17,21 +17,23 @@ function addDrawer(){
 	var menu =
 	'<h4>Basic</h4>'+
 	'<ul><li> <a href="basic-dynamic-resources.html">Dynamic Resources</a></li>'+
-	'<li> <a href="basic-embedding-options.html">Embedding Options</a></li>'+
-	'<li> <a href="https://dev.geogebra.org/examples/html/example-multiple.html">Hosting Options</a></li></ul>'+
+	'<li> <a href="basic-dynamic-3d-resources.html">Dynamic 3D Resources</a></li>'+
+	'<li> <a href="basic-embedding-options.html">Embedding Options</a></li></ul>'+
 	'<h4>Plus</h4>'+
-	'<ul><li> <a href="https://dev.geogebra.org/examples/html/example-graphing.html">Dynamic Resources</a></li>'+
-	'<li> <a href="https://dev.geogebra.org/examples/html/example-api.html">Apps Integration</a></li>'+
-	'<li> <a href="https://dev.geogebra.org/examples/html/example-api-multiple.html">Apps in Popups</a></li></ul>'+
+	'<ul><li> <a href="plus-dynamic-resources.html">Dynamic Resources</a></li>'+
+	'<li> <a href="example-graphing.html">Apps Integration</a></li>'+
+	'<li> <a href="example-popup.html">Apps in Popups</a></li></ul>'+
 	'<h4>API Integration</h4>'+
-    '<ul><li> <a href="https://dev.geogebra.org/examples/html/example-popup-graphing.html">Saving & Loading</a></li>'+
-    '<li> <a href="https://dev.geogebra.org/examples/html/example-popup-geometry.html">Buttons</a></li>'+
+    '<ul><li> <a href="example-api-save-state.html">Saving & Loading</a></li>'+
+    '<li> <a href="example-api.html">Buttons & Inputs</a></li>'+
     '<li> <a href="https://dev.geogebra.org/examples/html/example-popup-3d.html">Event Listeners</a></li>'+
     '<li> <a href="https://dev.geogebra.org/examples/html/example-popup.html">Communication between Resources</a></li>'+
 	'<li> <a href="https://dev.geogebra.org/examples/html/example-api-listeners.html">LTI Integration</a></li></ul>'+
 	'<h4>Documentation</h4>'+
 	'<ul><li><a href="https://www.geogebra.org/manual/en/Reference:Math_Apps_Embedding">Math Apps Embedding</a></li>'+
 	'<li><a href="https://www.geogebra.org/manual/en/Reference:JavaScript">JavaScript API</a></li></ul>';
+
+/*https://dev.geogebra.org/examples/html/example-api-listeners.html*/
 
 	var menuDiv = document.createElement('div');
 	menuDiv.id="drawer";

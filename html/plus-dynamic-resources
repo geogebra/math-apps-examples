@@ -87,18 +87,18 @@
 		
 		<p>
 			<h5>Thales Circle</h5>
-		<div class="subText"> Drag the point on the circle to explore the angles of the triangle.</div>
+		<div class="text"> Drag the point on the circle to explore the angles of the triangle.</div>
         <div id="applet_container1"></div>
 		</p>
 		
 		<p>
 			<h5>Addition Trainer</h5>
-		<div class="subText"> Press one of the 3 buttons to solve the addition.</div>
+		<div class="text"> Press one of the 3 buttons to solve the addition.</div>
         <div id="applet_container2"></div>
 		</p>
 		<p>
 			<h5>Equation Trainer</h5>
-		<div class="subText"> Drag the 2 points to graph the equation.</div>
+		<div class="text"> Drag the 2 points to graph the equation.</div>
 		<div id="applet_container3"></div>
 		</p>
 		
