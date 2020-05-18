@@ -10,14 +10,14 @@
 <body>
 <div class="contentBox">
         <h1>Buttons & Inputs using API</h1>
-        <p class="text">This is an example of an HTML file containing a GeoGebra applet with buttons triggering the GeoGebra Javascript API.</p>
+        <p class="text"><br>This is an example of an HTML file containing a GeoGebra applet with buttons triggering the GeoGebra Javascript API.</p>
 
         <script type="text/javascript" src="https://cdn.geogebra.org/apps/deployggb.js"></script>
         <script type="text/javascript">
 
                 var parameters = {
 				"prerelease":false,
-				"width":550,
+				"width":570,
 				"height":400,
 				"showToolBar":false,
 				"borderColor":null,
@@ -46,8 +46,8 @@
         <div id="applet_container"></div>
 		<div>
 		<p>
-		<a href="#" onclick="ggbApplet.setVisible('A', false)" class="appBtn noimage">Set point A invisible</a>
-		<a href="#" onclick="ggbApplet.setVisible('A', true)" class="appBtn noimage">Set point A visible</a>
+		<a href="#" onclick="ggbApplet.setVisible('A', false)" class="appBtn noimage blue">Hide point A</a>
+		<a href="#" onclick="ggbApplet.setVisible('A', true)" class="appBtn noimage blue">Show point A</a>
 		</p>
 		</div>
        
@@ -58,9 +58,9 @@
 			}
 		</script> 
 		
-<p class="text">Use the inputfield as you would directly in the app. Enter ie. D=(0,0) to create a point.</p>
+<p class="text">Use the input field as you would directly in the app. Enter ie. D=(0,0) to create a point.</p>
 <form class="text" action="" onsubmit="evalInput(inputField.value);inputField.value='';return false;"> 
-Input field: &nbsp;<input type="text" class="inputfield" name="inputField" size="30"> 
+<label>Input field: </label><input type="text" class="inputfield" name="inputField" size="30"> 
 </form> 
 </div>
 </body>

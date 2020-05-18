@@ -9,23 +9,37 @@
 </head>
 
 <body>
-<div><table border="0" width="600">
+<div class="contentBox"><table border="0" width="600">
 
   
-      <h2>Event listeners</h2>
+      <h1>Event listeners</h1>
 
-      <p>This page shows how to register JavaScript functions as
+      <p class="text"><br>This page shows how to register JavaScript functions as
 listeners to changes in a GeoGebra
-construction. See <a href="https://www.geogebra.org/manual/en/Reference:JavaScript#Event_listeners">Event Listeners</a> for a syntax description of the used
+construction. See <a class="inlineLink" href="https://www.geogebra.org/manual/en/Reference:JavaScript#Event_listeners">Event Listeners</a> for a syntax description of the used
 methods.
       </p>
 	  <script type="text/javascript" src="https://cdn.geogebra.org/apps/deployggb.js"></script>
 	  <script type="text/javascript">
-	  var parameters = {"prerelease":false,"width":600,"height":450,"showToolBar":true,"borderColor":null,"showMenuBar":false,"showAlgebraInput":false,
-				"showResetIcon":true,"enableLabelDrags":false,"enableShiftDragZoom":true,"enableRightClick":true,"capturingThreshold":null,"showToolBarHelp":false,
-				"errorDialogsActive":true,"useBrowserForJS":true,
-				"showLogging":"true",
-				"ggbbase64":"UEsDBBQACAgIAEYIjEsAAAAAAAAAAAAAAAAXAAAAZ2VvZ2VicmFfZGVmYXVsdHMyZC54bWztWlFT4zYQfu79Co2e2gcSy4lJjsHccDfT6c1wHFOYm74q9sZRUSTXkonDr68sJbZDEhqSFAIHD8irrGTp+1arXcmnn4oxR3eQKSZFiEnLwwhEJGMmkhDnenjUx5/OPpwmIBMYZBQNZTamOsRBqVm1M1KrS7yyjqZpiCNOlWIRRimnumwS4glGqFDsRMhLOgaV0giuoxGM6YWMqLa9jLROT9rtyWTSmr+vJbOknSS6VagYIzNWoUI8ezgx3S00mnSsuu95pP3XtwvX/RETSlMRAUZmHjEMac61Mo/AYQxCIz1NIcSpZEJjxOkAeIivSgn9OswAfsNo1sjA4+GzD7+cqpGcIDn4GyJTp7McqnZWaJc65ucvkssMZSHu9TBKXDEIsR8EBiWejmiIPafM6RQydEd5VUNzLSPb3tYOKVcw1zVv+iZjcL90Z/qCjS2KSGkwBBCMVAoQ2yc3Q2LZmFpiG/0xdT2iKSy9J5IyixUqQnxJLzGazsp7V1oVi9k1u581Dpq1esqhMaPT9gzuzYCPIQURG6UF9MlW6B/3LfplMXDFWwS/uy/wv4sm5P5WkBM/sJjb8t3kN0D9q/gTEjOXJvadd+yfBftFi+9uhbpnMffeGOJWxWGryv9mY5fjlEOxR0I4EzW4F1aoyPC322+bZHgvQoW3dypKmByoesSiWwFKlYjX7ysf/mCx2TTtOKQJsJg2PZFe3/UA/4gFKplhkhmdx+kZ5iLS1jHNIP+SZ3dNjjpd7yVYqvt8LpJ2ZWA9xgqSUqrwup7L9ULYLvR5XwirFoLMNS9H9FVok7+ANW+1NJRbgPTGdPVd3GRUqDKJWbS89XxmdPoYl8E7l6+Hy7n/u/xBs4qh3OQmQzP2uEnrduHa2sCh5QeHyu0TdouVSO0eYr2KBfBE696PGR5v5118r7sa3lbvFZrhnZm2rHH6MRPrmOU9rtyfC16RJNBMg2JU/FcqxqdJw1dczeWKp57jafcxPjmJDjqW64AsrQfiuT/S/egRckz8Q6X/ceAX0q6rqqKGnrwQ9Ae6yNajGUlRnnTP0yMnVTh2fxJXs4f8lCUgnOdWCBWeVZt6tvG9N7ubKIiVp8T+ek9ctW1vJpSxAp27FudO8dx3RccVXVcEFXDbJcWW8tR4uUaY/2CL6W6Xsb0Fx/MmjeEZUg2RjyFruJLLuVwZVeCciekvhwXKN3Ad6+xnvbUozmJjWmNmSDoy7I1pYVmkAyV5ruE6ygBEfX3nzHvCYj0qA0rz7iErSjNyP4xkxu6l0BUYqFwc59ze8y0c6KyyHv+xuHnBhnfz5lQkvF6k506qCXD3IVbp4RHnKl6aEHozBI9bfr9D+kHH65Hex6B/vCGipL81ogteyIGwyfZDvI2taHcv9CSf4a/yGTSL6sPojrdnw1hKbX+vKurk6xBPQq3JPFR9/kNOLqNc1Qf9TqqQ6/8kYRLNC8YZzabPiLyGog5UbqzQ+KLhAIFfPxVDR1IP7auTGh8IuMkMmUFR0LFpMGNDfKbRbZLJXMTL29xepk4O1ebWgzmQkgOtHdrnudy4/l8KONYBt/mu8r+t1mgE0e1AFgub5OM+ial6ZVxYoXH9vmJl7LJ3Hh2siWxzVLnp7e/R0sFmu/ENVnv+ndfZv1BLBwhK9xI+zQQAAIkmAABQSwMEFAAICAgARgiMSwAAAAAAAAAAAAAAABcAAABnZW9nZWJyYV9kZWZhdWx0czNkLnhtbO1X3W7bIBS+Xp8Ccd8YEjttqrhV1F1sUjtt6s1uiX3isDngAvlxX23vsGcaP07qtMm0RqkqTc1FzgHOD3wfHPDwajUr0QKU5lKkmHYIRiAymXNRpHhuJqfn+OryZFiALGCsGJpINWMmxYmz3PjZViemxPWxqkpxVjKteYZRVTLjXFK8xAitNL8Q8gubga5YBnfZFGbsRmbM+ChTY6qLKFoul511vo5URVQUprPSOUZ2rkKnuFEubLgtp2XPm3cJodH325sQ/pQLbZjIACO7jhwmbF4abVUoYQbCIFNXYGcsBc96NkfJxlCm+LMwdnGQuZmhbK4W1r9xTnGPJgRfnnwY6qlcIjn+Ye1SbNQcNv6+ETkbO3wtS6mQSnE3STCywNLuGUbjFDu8ymrKrNahJPxoPCCU9mk3uJesBoUWrHTWvofNjcx8RN87YaWGta3NfStzCCNxYy/4zCOMtAFLDsVIVwC518LqiWeq9qS34nF9N2UVPM/DBdyZugRkpjz7KUBbVpJWMKd84nkObk8FH+AFiIUFSiptdwLx2WvizR9Is/VW1Ldr6kcfaOj2/nYJiq/QKHiMguGoG0QviDiIZAMV3IswT+3+U8xnVckzbtzoMGp2wLO9wFZct7bCyDU/btFPegfRTzz55Cn1/xnRTzCvmLIH3pLnykHQwWLx+9ffSfBnLmPKgOZMtOi4dgNP+ei/87Gbj/0A27wCWrh+9e0tXG0lPQjXwcAD26UDD62XmzqXHAvefSBlUqpco1UoJaHA+P/lJtWEuQuuyb638u4CmxwItizrKeRKike8W12PkPcayA85eS+liSY9z1NCn11GcQNJMuiTuB8fjbNjH4n9iAswm+V/cXob4+Qd42NgfD9nua/rDQTf1u021vSwlxKJdxfnztmrF5DXeN7sfNy4zvCCqYN46G4CvvS9g0b9IM6COA9i0KCzn0Q9VxP7GN911TZD23zGb8XnY+A3vW7pv94AUetjI1p/0Fz+AVBLBwj1YcuO7gIAAHINAABQSwMEFAAICAgARgiMSwAAAAAAAAAAAAAAABYAAABnZW9nZWJyYV9qYXZhc2NyaXB0LmpzSyvNSy7JzM9TSE9P8s/zzMss0dBUqK4FAFBLBwjWN725GQAAABcAAABQSwMEFAAICAgARgiMSwAAAAAAAAAAAAAAAAwAAABnZW9nZWJyYS54bWzdWN9v2zYQfm7/CkLPiU1Kon4Udou2A7YBbVEs3dDtjZIYm4ssaSIdx0X++N2RlCw7a5s2QR8WRKF0Ot7xvu94PGXx4mZTk2vZa9U2y4DNaEBkU7aValbLYGsuz7PgxfOni5VsV7LoBbls+40wy4Cj5jgPnmYxoygTXbcMylporcqAdLUwOGUZ7AKiqmUQZ2WUZzk7l1FanMdFGZ5nCa/Oc8plEicyoaUICLnR6lnTvhMbqTtRyotyLTfiTVsKY/2tjemezee73W42rGzW9qv5alXMbnQVEIiq0cvA3zwDc0eTdpFVDyll849v3zjz56rRRjSlDAhGvFXPnz5Z7FRTtTuyU5VZL4OEQoRrqVZrgCDm8DBHpQ5w6GRp1LXUMHXyaGM2my6waqLB90/cHanHcAJSqWtVyX4Z0FnEA9L2SjbGv2Xey3yYv7hWcucM4Z3DNSCmbetCoA1ye0tCGlJyhgNzQwhDkrhX1Mlo5IbQDbEbuNOJ3fTYqcZOJ3Y6cQTkK62KWi6DS1FrwEw1lz3wNT5rs6+lXY8XHOJlZxCTVp9AOUREHciw8DN6FlN7uZgnAbKJR9Nvv9Hh4C7K7ukufIi7aIyOnbgLP+Mum9DHkJ5bwpAXO0QEGWGWGRxi/5i4x9QOjHpp5qQ5PiYPo2kIg/FJGJye2V973aXpSy4dkI/sMQq/waN7fpjD5Giv/ehwWZg9iss4u7fLmObpD8Y4pf9Zz9zI/Pgl4u9k92dXldP7A/HAsjdif38gOAuPkSCMcKgPnLAcCzpu/pAwTmKQZCBJSYQyzmISEVRhEbFVO7Z1AmsG5zCfU8KwtAOQBM4GADXE04BzwhPCU5yI5SfJrTEKF2rDcuCKUBZFcFlZFMOF5wMHQ9yZgUXwKLF3WLU42OdIILHCKCNxDo5QwFNGIlgDPKeUgMUIzTMbBJxB+MuIO35SEmYE7EHcaJl+y87//p2wmA/n7cITQfQadf25YORGIzURRGCrrmMoQQw9TWk4oekMiUr4gStkKjviimeeMMsY0JWgNLX0gyPE27EXxgOBZ57C21MKLeTxBHU811M8YTzq4D6c4h4mJEF7kEHQLyR4noRgMiRAV2L33mc4gXav1WpEdy3rbsTdAqmabms8eF5ebqoBSNOeqFdtefVqRNu/kUKbqRq0RYd2y7VJR93Yk0UtCllDP3uBuUDItajxhLYeLtvGkKE6hYE1Zxu/hdyWtaqUaP4A7oee6912U8ie2NsWY7RGcDoZOkTbYAwdYpRzp1K2bV9d7DWkCrn5S/Y4OQbFvbsPaTLLpz9QbnUpMK3D/PhNDijv/bsIGu6jn9R5k9cX0hiIWBNxI/WA76rHguKRw4df9au2Poi6VjXmtejMtrfdP1DYYxwvm1UtLXi2LYJeubwq2psL1+EkztaHfSfxNLQLKFav27rtCWy7kEM7u/Jj4UargysbtfBIXbmhsINVQbujCstDq2PHwo1WC6h1q/PBsiFSRgdPSttaCoBPN67NC2y+t40yb4YHo8orH6zXd6wPMB6bZI9mEtcMnwHafLRW8e7P8e7DWhqBHwdQXXmepSmHv2GeZS5lT5J1cSX7RtYu8RpIhG271S7vD/62Wr4XZv2yqX6TK9iy7wXWTQOrOtWsZKk2kCJO7lEXmBS/Q5ROWslVLwdwavtB5jixbzHqrpei0mspzZgmbldM1Ww0w+oXuuxVh3lMCijbV/KQqoCJgKo/CnAehKph0SXWH4DcINzwObo16xbS56d+Rt6qci1kTX6uxbZQ5hPYEQa1cL/XcgOfXMTYPLZbYaTzpf16Q95IW/wNleWE7gNU8HpM2DS1+YqDz3si6m4txvBrscdiMkbuK9XbtpJHUtEA/DYqqB+dy7lOSpd9br3Mfmnv7bYdEYF6qy/WovPWJnILvCY3y+A8nCVHP7DaPf4fADqdT2OFs3DgfneW+FR6hz6P5FcwffX/xTSaxRbE+FFALNvNRjQVaWxX8waKXXA4SgXF7CSCIaAOra0ZXlw6U97AHT6wbo5wX36FjkmgUz6opYNaNuj3cnGPLI0soMmMHierhfec8VmWHefwycFg1lCBG6k1wu7Dp+7mF1VV0vUrbSdKZTD708wfpP80zoB21VttulqBzilH82ntsT2E/6fU838BUEsHCE0sdihMBgAAYBMAAFBLAQIUABQACAgIAEYIjEtK9xI+zQQAAIkmAAAXAAAAAAAAAAAAAAAAAAAAAABnZW9nZWJyYV9kZWZhdWx0czJkLnhtbFBLAQIUABQACAgIAEYIjEv1YcuO7gIAAHINAAAXAAAAAAAAAAAAAAAAABIFAABnZW9nZWJyYV9kZWZhdWx0czNkLnhtbFBLAQIUABQACAgIAEYIjEvWN725GQAAABcAAAAWAAAAAAAAAAAAAAAAAEUIAABnZW9nZWJyYV9qYXZhc2NyaXB0LmpzUEsBAhQAFAAICAgARgiMS00sdihMBgAAYBMAAAwAAAAAAAAAAAAAAAAAoggAAGdlb2dlYnJhLnhtbFBLBQYAAAAABAAEAAgBAAAoDwAAAAA="};
+	  var parameters = {
+	  "prerelease":false,
+	  "width":750,
+	  "height":450,
+	  "showToolBar":true,
+	  "borderColor":null,
+	  "showMenuBar":false,
+	  "showAlgebraInput":false,
+	  "showResetIcon":true,
+	  "enableLabelDrags":false,
+	  "enableShiftDragZoom":true,
+	  "enableRightClick":true,
+	  "capturingThreshold":null,
+	  "showToolBarHelp":false,
+	  "errorDialogsActive":true,
+	  "useBrowserForJS":true,
+	  "showLogging":"true",
+	  "material_id":"ba9ezduy"
+	  };
 
 
 parameters.appletOnLoad = function(api) {
@@ -92,19 +106,19 @@ var applet = new GGBApplet('5.0', parameters);
 <div id="applet_container"></div>
       
 
-        <h3>Construction State Listening</h3>
+        <h5>Construction State Listening</h5>
 
-        <div style="float: left;margin-right:20px">
+        <div style="float: left;margin-right:20px" class="text">
 	  <label>Update:</label>
-			  <textarea name="textarea2" cols="35" rows="5"></textarea>
+			  <textarea class="inputfield" name="textarea2" cols="35" rows="5"></textarea>
 
 			<label>Add, Remove, Rename:</label>
-      	        <textarea name="textarea1" cols="35" rows="5"></textarea>
+      	        <textarea class="inputfield" name="textarea1" cols="35" rows="5"></textarea>
 
 		  </div>
 		  <div style="float: left">
               <label>Current Construction State:</label>
-              <textarea name="consState" wrap="physical" cols="30" rows="12"></textarea>
+              <textarea class="inputfield" name="consState" wrap="physical" cols="30" rows="14"></textarea>
         </div>
 <style>label{display:block}</style>
 </table>

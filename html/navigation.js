@@ -4,7 +4,7 @@ var menu =
 '<a href="#" id=drawerToggle class="material-icons">menu</a>'+
 '<img alt="GeoGebra" src="logo.svg" class="headerLogo" draggable="false">'+
 '<h1 class="siteName">Integration Examples</h1>'+
-'<div id=githubLink><a target="_blank" href="https://github.com/geogebra/math-apps-examples/blob/master/html/'+filename+'">View on GitHub</a></span>';
+'<div id=githubLink class="githubLink"><a target="_blank" href="https://github.com/geogebra/math-apps-examples/blob/master/html/'+filename+'">View on GitHub</a></span>';
 var menuDiv = document.createElement('div');
 menuDiv.className = "sample-toolbar";
 menuDiv.innerHTML = menu;
@@ -26,12 +26,12 @@ function addDrawer(){
 	'<h4>API Integration</h4>'+
     '<ul><li> <a href="example-api-save-state.html">Saving & Loading</a></li>'+
     '<li> <a href="example-api.html">Buttons & Inputs</a></li>'+
-    '<li> <a href="https://dev.geogebra.org/examples/html/example-popup-3d.html">Event Listeners</a></li>'+
-    '<li> <a href="https://dev.geogebra.org/examples/html/example-popup.html">Communication between Resources</a></li>'+
-	'<li> <a href="https://dev.geogebra.org/examples/html/example-api-listeners.html">LTI Integration</a></li></ul>'+
+    '<li> <a href="example-api-listeners.html">Event Listeners</a></li>'+
+    '<li> <a href="example-api-sync.html">Communication between Resources</a></li>'+
+	'<li> <a href="example-assess.html">LTI Integration</a></li></ul>'+
 	'<h4>Documentation</h4>'+
-	'<ul><li><a href="https://www.geogebra.org/manual/en/Reference:Math_Apps_Embedding">Math Apps Embedding</a></li>'+
-	'<li><a href="https://www.geogebra.org/manual/en/Reference:JavaScript">JavaScript API</a></li></ul>';
+	'<ul><li><a href="https://www.geogebra.org/manual/en/Reference:Math_Apps_Embedding" target="_blank">Math Apps Embedding<span class="material-icons inline">open_in_new</span></a></li>'+
+	'<li><a href="https://www.geogebra.org/manual/en/Reference:JavaScript" target="_blank">JavaScript API<span class="material-icons inline">open_in_new</span></a></li></ul>';
 
 /*https://dev.geogebra.org/examples/html/example-api-listeners.html*/
 
