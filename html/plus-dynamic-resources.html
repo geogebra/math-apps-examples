@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <title>Dynamic Resources (Plus)</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="navigation.js"></script>
+</head>
+
+<body><div class="contentBox" id="contentBox">
+        <h1>Dynamic Resources (Plus)</h1>
+        <p></p>
+
+        <script type="text/javascript" src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+        <script type="text/javascript">
+
+			 var parameters1 = {
+                        "width":800,
+                        "height":500,
+                        "prerelease":false,
+                        "showToolBar":true,
+                        "borderColor":null,
+                        "showMenuBar":false,
+                        "showAlgebraInput":true,
+                        "showResetIcon":true,
+                        "enableLabelDrags":false,
+                        "enableShiftDragZoom":true,
+                        "enableRightClick":false,
+                        "capturingThreshold":null,
+                        "showToolBarHelp":true,
+                        "errorDialogsActive":true,
+                        "useBrowserForJS":false,
+                        "material_id":"vehegpbh"};
+              var applet1 = new GGBApplet(parameters1, '5.0', 'applet_container1');
+              
+			  var parameters2 = {
+                        "width":800,
+                        "height":400,
+                         "prerelease":false,
+                        "showToolBar":true,
+                        "borderColor":null,
+                        "showMenuBar":false,
+                        "showAlgebraInput":true,
+                        "showResetIcon":true,
+                        "enableLabelDrags":false,
+                        "enableShiftDragZoom":true,
+                        "enableRightClick":false,
+                        "capturingThreshold":null,
+                        "showToolBarHelp":true,
+                        "errorDialogsActive":true,
+                        "useBrowserForJS":false,
+                        "material_id":"qx68ejr6"};
+                var applet2 = new GGBApplet(parameters2, '5.0', 'applet_container2');
+              //  when used with Math Apps Bundle, uncomment this:
+              //  applet.setHTML5Codebase('GeoGebra/HTML5/5.0/web/');
+				
+                window.onload = function() { 
+					applet1.inject(applet_container1);
+					applet2.inject(applet_container2);
+					}
+				
+
+        </script>
+		
+		<p>
+			<h5>GeoGebra Calculator Suite: Functions</h5>
+		<div class="text"> Enter "f - g" on the left to calculate (f-g)(x). Open the <span class="material-icons inline straight">more_vert</span> menu on the right of f(x) to create a table of values.</div>
+        <div id="applet_container1"></div>
+		</p>
+		
+		<p>
+			<h5>GeoGebra Geometry: Equilateral Trianlge</h5>
+		<div class="text"> Use the tools on the left to construct an equilateral triangle.</div>
+        <div id="applet_container2"></div>
+		</p>
+		
+	
+</div>
+</body>
+
+</html>

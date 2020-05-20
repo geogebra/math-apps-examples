@@ -8,9 +8,9 @@
 </head>
 
 <body>
-<div class="contentBox">
+<div class="contentBox" id="contentBox">
         <h1>Saving and Loading using API</h1>
-        <p class="text"><br>This is an example of saving and loading a GeoGebra applet into and from
+        <p class="text"><br>GeoGebra resources can be saved into and loaded from
         <a class="inlineLink" href="https://en.wikipedia.org/wiki/Base64">Base64</a> format.</p>
 
         <script type="text/javascript" src="https://cdn.geogebra.org/apps/deployggb.js"></script>
@@ -32,7 +32,7 @@
                         "showToolBarHelp":true,
                         "errorDialogsActive":true,
                         "useBrowserForJS":false,
-                        "material_id":"qkcqxdve"};
+                        "material_id":"ztq4xfyj"};
                 var applet = new GGBApplet(parameters, '5.0');
                  //  when used with Math Apps Bundle, uncomment this:
                  //  applet.setHTML5Codebase('GeoGebra/HTML5/5.0/web/');
@@ -44,15 +44,15 @@
 
         <div id="applet_container"></div>
 		<p  class="text"><br>
-        The <b>Save</b> and <b>Load</b> buttons below show how you can save the construction to the server.<br>
-        To make this example self-contained, actual server was replaced by a textfield below the links.</p>
+        Move points A, B, C and press <b>Save</b>. Then move the points again. <br>Press <b>Load</b> to load the previously saved construction.
+        </p>
         <p>
             <a class="appBtn noimage blue" href="javascript:saveGgbFile()">Save</a>
             <a class="appBtn noimage blue" href="javascript:loadGgbFile()">Load</a>
         </p>
 
 
-        <p class="text">In a real setting, content of the following textfield will be stored in a database or file on the server:</p>
+        <p class="text"><br>To make this example self-contained, saving to a server was replaced by a textfield below. <br>In a real setting, the content of the following textfield will be stored in a database or file on the server:</p>
         <textarea name="Base64" id="Base64" class="inputfield" cols=75 rows=8></textarea>
 </div>
 </body>

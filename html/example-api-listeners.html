@@ -2,21 +2,20 @@
 <html>
 <head>
   <head>
-<title>GeoGebra and JavaScript</title>
+<title>Event listeners</title>
 <script src="navigation.js"></script>
 
 </head>
 </head>
 
 <body>
-<div class="contentBox"><table border="0" width="600">
+<div class="contentBox" id="contentBox"><table border="0" width="600">
 
   
       <h1>Event listeners</h1>
 
-      <p class="text"><br>This page shows how to register JavaScript functions as
-listeners to changes in a GeoGebra
-construction. See <a class="inlineLink" href="https://www.geogebra.org/manual/en/Reference:JavaScript#Event_listeners">Event Listeners</a> for a syntax description of the used
+      <p class="text"><br>JavaScript functions can be registered as listeners to changes in a GeoGebra construction. <br>
+	  See <a class="inlineLink" href="https://www.geogebra.org/manual/en/Reference:JavaScript#Event_listeners">Event Listeners</a> for a syntax description of the used
 methods.
       </p>
 	  <script type="text/javascript" src="https://cdn.geogebra.org/apps/deployggb.js"></script>
@@ -24,7 +23,7 @@ methods.
 	  var parameters = {
 	  "prerelease":false,
 	  "width":750,
-	  "height":450,
+	  "height":400,
 	  "showToolBar":true,
 	  "borderColor":null,
 	  "showMenuBar":false,
@@ -108,7 +107,7 @@ var applet = new GGBApplet('5.0', parameters);
 
         <h5>Construction State Listening</h5>
 
-        <div style="float: left;margin-right:20px" class="text">
+        <div style="float: left;margin-right:24px" class="text">
 	  <label>Update:</label>
 			  <textarea class="inputfield" name="textarea2" cols="35" rows="5"></textarea>
 
@@ -116,9 +115,9 @@ var applet = new GGBApplet('5.0', parameters);
       	        <textarea class="inputfield" name="textarea1" cols="35" rows="5"></textarea>
 
 		  </div>
-		  <div style="float: left">
+		  <div style="float: left; padding-top:6px">
               <label>Current Construction State:</label>
-              <textarea class="inputfield" name="consState" wrap="physical" cols="30" rows="14"></textarea>
+              <textarea class="inputfield" style="height:250px" name="consState" cols="35" rows="14"></textarea>
         </div>
 <style>label{display:block}</style>
 </table>

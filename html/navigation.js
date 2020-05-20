@@ -30,8 +30,8 @@ function addDrawer(){
     '<li> <a href="example-api-sync.html">Communication between Resources</a></li>'+
 	'<li> <a href="example-assess.html">LTI Integration</a></li></ul>'+
 	'<h4>Documentation</h4>'+
-	'<ul><li><a href="https://www.geogebra.org/manual/en/Reference:Math_Apps_Embedding" target="_blank">Math Apps Embedding<span class="material-icons inline">open_in_new</span></a></li>'+
-	'<li><a href="https://www.geogebra.org/manual/en/Reference:JavaScript" target="_blank">JavaScript API<span class="material-icons inline">open_in_new</span></a></li></ul>';
+	'<ul><li><a href="https://www.geogebra.org/manual/en/Reference:Math_Apps_Embedding" target="_blank">Math Apps Embedding&nbsp;&nbsp;<span class="material-icons inline">arrow_downward</span></a></li>'+
+	'<li><a href="https://www.geogebra.org/manual/en/Reference:JavaScript" target="_blank">JavaScript API&nbsp;&nbsp;<span class="material-icons inline">arrow_downward</span></a></li></ul>';
 
 /*https://dev.geogebra.org/examples/html/example-api-listeners.html*/
 
@@ -41,22 +41,21 @@ function addDrawer(){
 	document.body.insertBefore(menuDiv,document.body.children[1]);
 	
 	
-	var glassDiv = document.createElement('div');
-	glassDiv.id="drawerGlass";
-	document.body.insertBefore(glassDiv,document.body.children[1]);
-	
 	document.getElementById("drawerToggle").addEventListener("click",function(){
         var visible = menuDiv.style.display == "block";
         console.log(visible);
         if(!visible){
-            menuDiv.style.display = glassDiv.style.display = "block";
+            menuDiv.style.display = "block";
+			document.getElementById("contentBox").classList.add('right');
+			
         }else {
-            menuDiv.className = glassDiv.className = "animateOut";
+            menuDiv.className = "animateOut";
             var callback = function(){
                 menuDiv.removeEventListener("animationend",callback);
-                menuDiv.style.display = glassDiv.style.display = "none";
-                menuDiv.className = glassDiv.className = "";
+                menuDiv.style.display = "none";
+                menuDiv.className = "";
             }
+			document.getElementById("contentBox").classList.remove('right');
             menuDiv.addEventListener("animationend",callback);
         }
 	});

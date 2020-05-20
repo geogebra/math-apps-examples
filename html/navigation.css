@@ -73,12 +73,14 @@ div.sample-toolbar {
 	color: rgba(0,0,0,.6);
 	letter-spacing: 0.43px;
 	float:left;
+	margin: 19px 0 0 0;
 }
 
 #drawer{	
 	display:none;
     background-color: white;
 	height: 100%;
+	width: 264px;
     position: fixed;
 	overflow: auto;
     z-index: 2000;
@@ -112,9 +114,17 @@ div.sample-toolbar {
     padding: 0;
     float: none;
     height: 20px;
-    padding-left: 8px;
-    top: 4px;
+    top: 5px;
     position: relative;
+	transform: rotate(-140deg);
+    transform-origin: initial;
+}
+.material-icons.inline.straight{
+	transform: none;
+	cursor: default;
+}
+.material-icons.inline.straight:hover{
+	background-color: #fff;
 }
 .material-icons:hover, .material-icons:focus {
 	background-color: #e5e5e5;
@@ -154,34 +164,6 @@ div.sample-toolbar {
 	letter-spacing: -0.65px;
 	height: 32px;
 	margin-bottom: 0px;
-}
-
-#drawerGlass{
-	max-width:inherit;
-	display:none;
-	height: calc(100% - 84px);
-	width:100%;
-    background-color: gray;
-    position: absolute;
-    z-index: 1500;
-    left: 0;
-    padding: 10px;
-	opacity:0.6;
-	animation-name:animGlass;
-	animation-duration:0.2s;
-}
-#drawerGlass.animateOut{
-    animation-name:animGlassOut;
-}
-
-@keyframes animGlass {
-	0% {opacity:0;}
-	100% {opacity: 0.6;}
-}
-
-@keyframes animGlassOut {
-    0% {opacity: 0.6;}
-	100% {opacity:0;}	
 }
 
 @keyframes animDrawer {
@@ -224,6 +206,14 @@ a.btn.active {
 	padding: 24px 0px 0px 0px;
 	margin:0px;
 }
+.contentBox{
+	transition: padding-left 0.2s;
+}
+
+.contentBox.right{
+	padding-left: 312px;
+	transition: padding-left 0.2s;
+}
 .contentBox h5{
 	color: rgba(0,0,0,.87);
 	font-size: 120%;
@@ -234,13 +224,7 @@ a.btn.active {
 .text{
 	color: rgba(0,0,0,.87);
 	font-size: 100%;
-	font-weight: 400;
-	padding: 0px 0px 16px 0px;
-	margin:0px;
-}
-.subText{
-	color: rgba(0,0,0,.54);
-	font-size: 100%;
+	line-height:1.5;
 	font-weight: 400;
 	padding: 0px 0px 16px 0px;
 	margin:0px;
@@ -290,7 +274,7 @@ a.btn.active {
 	box-shadow: 0 3px 3px 0 rgba(0,0,0,.14), 0 1px 7px 0 rgba(0,0,0,.12), 0 3px 1px -1px rgba(0,0,0,.2);
 }
 .appBtn.active{
-	background-color: #e5e5e5;
+	background-color: #ebebeb;
 }
 .appBtn:focus{
 		outline: none;

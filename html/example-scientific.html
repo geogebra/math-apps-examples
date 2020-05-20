@@ -8,23 +8,22 @@
 </head>
 
 <body>
-<div class="contentBox" id="contentBox">
+<div  class="contentBox" id="contentBox">
         <h1>Apps Integration</h1>
-		
+	
 		<p><br><a class="appBtn app-icon-graphing" id="app_graphing" href="example-graphing.html">Graphing</a>
-        <a class="appBtn app-icon-geometry active" id="app_geometry" href="example-geometry.html">Geometry</a>
-		<a class="appBtn app-icon-scientific" id="app_scientific" href="example-scientific.html">Scientific</a>
+        <a class="appBtn app-icon-geometry" id="app_geometry" href="example-geometry.html">Geometry</a>
+		<a class="appBtn app-icon-scientific active" id="app_scientific" href="example-scientific.html">Scientific</a>
 		<a class="appBtn app-icon-cas" id="app_cas" href="example-cas.html">CAS</a>
 		<a class="appBtn app-icon-3d" id="app_3d" href="example-3d.html">3D</a>
        <br><br>
         <a class="appBtn app-icon-classic" id="app_classic" href="example-tools.html">Classic</a>
 		<a class="appBtn noimage" id="app_editor" href="example-editor.html">Formula Editor</a></p>
 		
-		<h5>Geometry</h5>
-      <p class="text">GeoGebra Geometry can be embedded as an app. Preloading a resource is optional. <br>
-        For details about customization please refer to <a  class="inlineLink" target="_blank" href="https://wiki.geogebra.org/en/Reference:Applet_Parameters">Documentation</a>. <br>
-		For details about the app have a look at <a class="inlineLink" target="_blank" href="https://www.geogebra.org/m/DmVNbn2V">Learn Geometry</a>.</p>
-		
+		<h5>Scientific Calculator</h5>
+        <p class="text">GeoGebra Scientific Calculator can be embedded as an app. <br>
+        For details about customization please refer to <a  class="inlineLink" target="_blank" href="https://wiki.geogebra.org/en/Reference:Applet_Parameters">Documentation</a>.<br>
+		For details about the app have a look at <a class="inlineLink" target="_blank" href="https://www.geogebra.org/m/brr48aw7">Learn Scientific Calculator</a>.</p>
         
 		
         <script type="text/javascript" src="https://cdn.geogebra.org/apps/deployggb.js"></script>
@@ -34,7 +33,7 @@
 				}
                 var parameters = {
                         "id":"ggbApplet",
-                        "appName":"geometry",
+                        "appName":"scientific",
                         "width":800,
                         "height":550,
                         "showToolBar":true,
@@ -60,7 +59,7 @@
         </script>
 
 
-       <p> <div id="applet_container"></div></p>
+      <p>  <div id="applet_container"></div></p>
 		</div>
 </body>
 
