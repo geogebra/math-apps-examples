@@ -1,3 +1,6 @@
+> [!NOTE]
+> Archived: all examples are now part of https://github.com/geogebra/integration
+
 # GeoGebra Math Apps
 Solve math problems, graph functions, create geometric constructions, do statistics and calculus, save and share your results. All of that in your browser using [GeoGebra Graphing Calculator](http://www.geogebra.org/graphing), [GeoGebra Classic](http://www.geogebra.org/classic) and [other apps](https://www.geogebra.org/download).
 
